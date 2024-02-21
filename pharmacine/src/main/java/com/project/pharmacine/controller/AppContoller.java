@@ -45,9 +45,9 @@ public class AppContoller {
         return appService.signInGetOne(id);
     }
     @PutMapping("update/{id}")
-    public String putMethodName(@PathVariable String id, @RequestBody String entity) {
+    public SignUpModel putMethodName(@PathVariable int id, @RequestBody SignUpModel entity) {
         
-        
+        appService.update(id,entity);
         return entity;
     }
 

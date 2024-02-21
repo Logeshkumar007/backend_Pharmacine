@@ -11,13 +11,13 @@ public class SignUpModel {
     private String email;
     private String password;
     private String name;
-    private int phn;
+    private String phn;
 
     public SignUpModel()
     {
         
     }
-    public SignUpModel(int id, String email, String password, String name, int phn) {
+    public SignUpModel(int id, String email, String password, String name, String phn) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -48,10 +48,10 @@ public class SignUpModel {
     public void setName(String name) {
         this.name = name;
     }
-    public int getPhn() {
+    public String getPhn() {
         return phn;
     }
-    public void setPhn(int phn) {
+    public void setPhn(String phn) {
         this.phn = phn;
     }
     
