@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 @Getter
 @Setter
@@ -18,6 +21,8 @@ public class ProductModel {
     private String description;
     private float price;
     private int quantity;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "product")
-    List<BillDetail>billDetails;
+
+    @JsonManagedReference(value = "product-billDetail")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
+    List<BillDetail> billDetails;
 }

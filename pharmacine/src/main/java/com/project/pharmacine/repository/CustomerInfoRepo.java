@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.project.pharmacine.model.CustomerInfo;
 
 @Repository
-public interface CustomerInfoRepo extends JpaRepository<CustomerInfo,String>{
+public interface CustomerInfoRepo extends JpaRepository<CustomerInfo,Integer>{
     
 }

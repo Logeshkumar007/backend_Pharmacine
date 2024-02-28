@@ -1,9 +1,8 @@
 package com.project.pharmacine.model;
 
-import jakarta.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
@@ -12,13 +11,13 @@ import lombok.Data;
 @Data
 public class BillDetail {
     @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @JsonBackReference(value = "product-billDetail")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private ProductModel product;
     
-    @ManyToOne
-    ProductModel product;
-    @ManyToOne
-    CustomerInfo customerInfo;
-
-
+    @JsonBackReference(value = "customerInfo-billDetail")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private CustomerInfo customerInfo;
 }
