@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.project.pharmacine.model.SignUpModel;
 
 @Repository
-public interface AppRepo extends JpaRepository<SignUpModel,Integer>{
+public interface SignUpRepo extends JpaRepository<SignUpModel,Integer>{
     
 }
