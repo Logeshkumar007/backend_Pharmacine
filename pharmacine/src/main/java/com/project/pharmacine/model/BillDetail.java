@@ -1,6 +1,8 @@
 package com.project.pharmacine.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
@@ -14,10 +16,12 @@ public class BillDetail {
     private int id;
 
     @JsonBackReference(value = "product-billDetail")
+    // @JsonManagedReference
     @ManyToOne(fetch = FetchType.EAGER)
     private ProductModel product;
     
     @JsonBackReference(value = "customerInfo-billDetail")
+    // @JsonManagedReference
     @ManyToOne(fetch = FetchType.EAGER)
     private CustomerInfo customerInfo;
 }
